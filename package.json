@@ -1,7 +1,16 @@
 {
   "name": "@ssibrahimbas/capacitor-backbutton",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "It simplifies the use of the backbutton for the capacitor.",
+  "homepage": "https://github.com/ssibrahimbas/capacitor-backbutton/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/ssibrahimbas/capacitor-backbutton/issues",
+    "email": "info@samisalihibrahimbas.com.tr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssibrahimbas/capacitor-backbutton.git"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
