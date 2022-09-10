@@ -325,6 +325,57 @@ export default {
 }
 </script>
 
+
+// Use Vue 3 Hooks and TypeScript
+
+<script setup lang="ts">
+import { useBackButton, type CallbackFunction, type BackButtonListener } from "@ssibrahimbas/capacitor-backbutton";
+import { ref, onMounted, onUnMounted } from "vue"
+import { useRouter } from "vue-router"
+
+const popupShow = ref<boolean>(false);
+const { subscribe, unsubscribe, listen } = useBackButton();
+const router = useRouter();
+
+const closePopup : CallbackFunction = (event, next) : void => {
+  if(this.popupShow.value) {
+    this.popupShow.value = false;
+    return;
+  }
+  next();
+}
+
+const prevPage : CallbackFunction = (event, next) : void => {
+  router.back();
+}
+
+const getSubscribers = () : BackButtonListener[] => {
+  return [
+    {
+    unique: "appClosePopup",
+    priority: 100,
+    callback: closePopup
+  }, 
+  {
+    unique: "appPrevPage",
+    priority: 1,
+    callback: prevPage
+  }
+  ]
+}
+
+onMounted(() : void => {
+  listen();
+  subscribe(...getSubscribers());
+})
+
+onUnMounted(() : void => {
+  unsubscribe(...getSubscribers())
+})
+</script>
+
 ```
+
+
 
 </docgen-api>
