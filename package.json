@@ -1,11 +1,11 @@
 {
   "name": "@ssibrahimbas/capacitor-backbutton",
-  "version": "0.0.2",
+  "version": "4.0.0",
   "description": "It simplifies the use of the backbutton for the capacitor.",
   "homepage": "https://github.com/ssibrahimbas/capacitor-backbutton/blob/master/README.md",
   "bugs": {
     "url": "https://github.com/ssibrahimbas/capacitor-backbutton/issues",
-    "email": "info@samisalihibrahimbas.com.tr"
+    "email": "info@ssibrahimbas.com"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "dist/**/*"
   ],
   "scripts": {
-    "clear": "del-cli ./build/*",
+    "clear": "del-cli ./dist/*",
     "build": "npm run clear && tsc"
   },
   "keywords": [
@@ -31,8 +31,8 @@
   "author": "Sami Salih İBRAHİMBAŞ",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/app": "^1.1.0",
-    "typescript": "^4.5.5"
+    "@capacitor/app": "^4.0.1",
+    "typescript": "^4.8.3"
   },
   "dependencies": {
     "@ssibrahimbas/core": "^0.0.8"
